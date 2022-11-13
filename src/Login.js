@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Login = () => {
     return (
         <div>
@@ -19,6 +21,8 @@ const Login = () => {
                 <h1>Welcome page</h1>
                 <p>Sign in to continue access</p>
                 <p className="websitename">www.electronicgradebook.com</p>
+                <Link to="/register">No account? Click me to register</Link>
+
              </div>
              <div className="footer">
                 <div className="authors">
