@@ -2,7 +2,7 @@
 body{
   margin: 0;
   padding: 0;
-  background: linear-gradient(#5f9bd6, #d369e1, #697be1);
+  background: linear-gradient(#5f9bd6, #63367d, #697be1);
   height: 100vh;
   overflow: hidden;
   font-family: Georgia;
@@ -168,4 +168,61 @@ input[type="submit"]:hover{
   margin: 30px 0;
 }
 
+.error {
+  color:red;
+  text-align: center;
+  font-weight: 1000;
+  font-size: larger;
+}
+
+.mysidenav {
+  background-color:rgb(101, 101, 183) !important;
+  font-size: large;
+}
+
+.students-quantity {
+  padding-left: 3%;
+  border-radius: 30px;
+  width: 80%;
+  background-color: rgb(37, 111, 37);
+  border: 2px solid rgb(38, 149, 7);
+  top: 20%;
+}
+
+.average-grade {
+  padding-left: 3%;
+  border: 2px solid red;
+  border-radius: 30px;
+  width: 80%;
+  left: 2%;
+  background-color: rgb(229, 54, 54);
+  top: 20%;
+}
+
+.statistics {
+  height: 20%;
+  left:10%;
+  width: 80%;
+  position: absolute;
+  top: 10%;
+  display: flex;
+  font-size: x-large;
+  opacity: 0.7;
+}
+
+.students-quantity i {
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  font-size: 4em;
+  text-shadow:2px 4px 6px cyan;
+}
+
+.average-grade i  {
+  position: absolute;
+  top: 15%;
+  left: 90%;
+  font-size: 4em;
+  text-shadow:2px 4px 6px cyan;
+}
 

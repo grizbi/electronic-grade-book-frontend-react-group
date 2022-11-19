@@ -1,20 +1,66 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link} from 'react-router-dom';
 
 const Login = () => {
+
+const [areBadCredentials, setAreBadCredentials] = useState(false);
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+let jwt = "";
+// const navigate = useNavigate();
+
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+    const user = {email, password}
+
+    fetch('http://localhost:8080/authenticate', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user)
+    })
+    .then((response) => {
+        if(response.status===401) {
+            setAreBadCredentials(true);
+        } 
+        else if(response.status===200){
+            return response.json();
+        }
+    })
+    .then(data => {
+        jwt = data.jwt;
+        console.log(jwt);
+        localStorage.setItem('jwt', jwt);
+        localStorage.setItem('email', email);
+        window.location.replace("/homepage");
+    
+    })
+    .catch(e => {
+        console.log(e);
+    })
+}
+
     return (
         <div>
             <div className="center">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h1>Login</h1>
                     <div className="txt_field">
-                        <input type="text" required/>
+                        <input type="text"
+                        value={email}
+                        onChange={ (e) => setEmail(e.target.value) }
+                        required/>
                         <label>E-mail</label>
                     </div>
                     <div className="txt_field">
-                        <input type="password" required/>
+                        <input type="password"
+                        value={password}
+                        onChange={ (e) => setPassword(e.target.value) }
+                        required/>
                         <label>Password</label>
                     </div>
                     <input type="submit" value="Login"/>
+                    <div class="error">{areBadCredentials && <p>Bad credentials!</p>}</div>
                 </form>
              </div>   
              <div className="welcome">

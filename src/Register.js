@@ -6,16 +6,30 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
+    const [isUserAlreadyDefined, setIsUserAlreadyDefined] = useState(false);
+    const [isCreated, setIsCreated] = useState(false);
 
 const handleSubmit = (e) => {
+    e.preventDefault();
     const user = { email, password, name, surname, grades:null }
 
     fetch('http://localhost:8080/users', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user)
-    }).then(() => {
-        console.log("User has been added");
+    }).then((response) => {
+        console.log(response);
+        response.json()
+        .then((data) => {
+            console.log(data);
+            if(data.email == null) {
+                setIsUserAlreadyDefined(true);
+                setIsCreated(false);
+            }
+            else {
+                setIsCreated(true);
+            }
+        })
     })
 }
     return ( 
@@ -57,6 +71,8 @@ const handleSubmit = (e) => {
                     </div>
                     <input position type="submit" value="Submit"></input>
                     <p>Already have an account? <Link to="/login"> Log in </Link> </p>  
+                    <div className="error">{isUserAlreadyDefined && <p>User already defined, try different e-mail</p>}</div>
+                    <div>{isCreated && <p>Account created successfully</p>}</div>
                 </form>
                 
             </div>
