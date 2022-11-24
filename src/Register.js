@@ -35,8 +35,8 @@ const handleSubmit = (e) => {
     return ( 
         <div>
             <div className="registerform">
-                <h1>Registration</h1>
                 <form onSubmit={handleSubmit}>
+                    <h1>Registration</h1>
                     <div className="txt_field">
                         <input type="text" 
                         value = {email}

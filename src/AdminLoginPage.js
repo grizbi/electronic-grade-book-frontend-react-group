@@ -11,6 +11,8 @@ const AdminHomePage = () => {
     const[highestAverageGradeStudent, setHighestAverageGradeStudent] = useState('');
     const[mostOftenObtainedMark, setMostOftenObtainedMark] = useState('');
     const[leastFrequentlyObtainedMark, setLeastFrequentlyObtainedMark] = useState('');
+    const[highestGrade, setHighestGrade] = useState('');
+    const[totalOfMarks, setTotalOfMarks] = useState('');
 
     useEffect(() => {
         fetch('http://localhost:8080/students-total', {
@@ -49,12 +51,34 @@ const AdminHomePage = () => {
             setMostOftenObtainedMark(data.mostOftenObtainedMark);
             setLeastFrequentlyObtainedMark(data.leastFrequentlyObtainedMark);
         })
+        fetch('http://localhost:8080/highest-grade', {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('jwt')
+            }
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            setHighestGrade(data);
+        })
+        fetch('http://localhost:8080/total-marks', {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('jwt')
+            }
+        })
+        .then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            setTotalOfMarks(data);
+        })
     })
 
     return ( 
         <div className="admin-home-page">
-            <h1 style={{textAlign:"center"}}>Hello {localStorage.getItem('email')}</h1>
-            <h2 style={{paddingLeft:"12%", paddingTop:"2%"}}>Student Management Control Panel</h2>
+            <h1 style={{textAlign:"center", fontSize:"50px"}}>Hello {localStorage.getItem('email')}</h1>
+            {/* <h2 style={{paddingTop:"1vw",textAlign:"center", fontSize:"30px"}}>Student Management Control Panel</h2> */}
             <MySideNav/>
             <div className="statistics">
                 <div className="students-quantity">
@@ -70,20 +94,33 @@ const AdminHomePage = () => {
                     <i class="fa-solid fa-chart-simple"></i>
                 </div>
             </div>
+            <div className="statistics-two">
+                <div className="highest-grade">
+                    <div style={{fontWeight: "1000", fontSize:"3.5vw"}}>{highestGrade}</div>
+                    <br></br>
+                    Highest grade
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <div className="marks-total">
+                    <div style={{fontWeight: "1000", fontSize:"3.5vw"}}>{totalOfMarks}</div>
+                    <br></br>
+                    Total number of marks
+                    <i class="fa-solid fa-pen"></i>
+                </div>
+            </div>
             
-            <div className="statistics-info">Interesting facts about students and marks</div>
-            <div className="flex-container">
+            {/* <div className="statistics-info"></div> */}
             <div className="fun-fact">
+                    <h3>Interesting facts about students and marks</h3>
                     Student with the highest average grade: {highestAverageGradeStudent}<br></br>
                     Student with the lowest average grade: {lowestAverageGradeStudent} <br></br>
                     Most often obtained mark: {mostOftenObtainedMark} <br></br>
-                    Least frequently obtained mark: {leastFrequentlyObtainedMark}
-                    
-                </div>
-                <div className="calendar">
-                    <MyCalendar/>  
-                </div>        
-            </div>
+                    Least frequently obtained mark: {leastFrequentlyObtainedMark}   
+            </div>       
+            
+            {/* <div className="calendar">
+                <MyCalendar/>  
+            </div>  */}
         </div>
 
      );

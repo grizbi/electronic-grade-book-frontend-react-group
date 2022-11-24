@@ -5,7 +5,7 @@ body{
   background: linear-gradient(#5f9bd6, #63367d, #697be1);
   height: 100vh;
   overflow: hidden;
-  font-family: 'Courier New', Courier, monospace
+  font-family: Times New Roman (serif);
 }
 
 .center{
@@ -180,10 +180,30 @@ input[type="submit"]:hover{
   font-size: large;
 }
 
+.statistics {
+  display:flex;
+  left:10%;
+  width: 80vw;
+  position: absolute;
+  top: 15vh;
+  font-size: x-large;
+  opacity: 0.7;
+}
+
+.statistics-two {
+  display:flex;
+  left:10%;
+  width: 80vw;
+  position: absolute;
+  top: 37vh;
+  font-size: x-large;
+  opacity: 0.7;
+}
+
 .students-quantity {
   padding-left: 3%;
   border-radius: 30px;
-  width: 80%;
+  width: 80vw;
   background-color: rgb(37, 111, 37);
   border: 2px solid rgb(38, 149, 7);
   top: 20%;
@@ -193,28 +213,32 @@ input[type="submit"]:hover{
   padding-left: 3%;
   border: 2px solid red;
   border-radius: 30px;
-  width: 80%;
-  left: 2%;
+  width: 80vw;
   background-color: rgb(229, 54, 54);
-  top: 20%;
+
 }
 
-.statistics {
-  height: 20%;
-  left:10%;
-  width: 80%;
-  position: absolute;
-  top: 20%;
-  display: flex;
-  font-size: x-large;
-  opacity: 0.7;
+.marks-total {
+  padding-left: 3%;
+  border: 2px solid rgb(16, 90, 133);
+  border-radius: 30px;
+  width: 80vw;
+  background-color: rgb(29, 113, 158);
 }
 
-.students-quantity i {
+.highest-grade {
+  padding-left: 3%;
+  border: 2px solid rgb(183, 124, 22);
+  border-radius: 30px;
+  width: 80vw;
+  background-color: rgb(184, 129, 26);
+}
+
+.students-quantity i, .highest-grade i  {
   position: absolute;
   top: 15%;
   left: 40%;
-  font-size: 4em;
+  font-size: 4.5vw;
   text-shadow:2px 4px 6px cyan;
 }
 
@@ -222,17 +246,20 @@ input[type="submit"]:hover{
   position: absolute;
   top: 15%;
   left: 90%;
-  font-size: 4em;
+  font-size: 4.5vw;
   text-shadow:2px 4px 6px cyan;
 }
 
-.react-calendar { 
+.calendar {
+  position:absolute;
+  left: 80%;
+  top:0%;
   color: #222;
   border-radius: 8px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
- }
+}
 
 .react-calendar__navigation button {
  color: #6f48eb;
@@ -313,34 +340,34 @@ abbr[title] {
  color: white;
 }
 
-.flex-container {
-  left:10%;
-  width: 80%;
-  position:absolute;
-  top: 60%;
-  display:flex;
-}
+
 
 .fun-fact {
+  left:20%;
+  position:absolute;
+  top: 60%;
   line-height: 2;
-  padding-top: 3%;
-  padding-left: 3%;
   width: 60%;
-  font-size: x-large;
+  height: 17vw;
+  font-size: 1.2vw;
   background-color: white;
   border-radius: 10px;
-  width:70%;
+  text-align: center;
+}
+
+h3{
+  border-bottom: rgb(205, 201, 201) solid 2px;
 }
 
 .statistics-info {
   border-radius: 10px;
   border-bottom-style: solid;
   border-bottom-color: #222;
-  position: absolute;
   font-weight: bold;
   background-color: white;
-  width: 80%;
+  position: absolute;
   top:55%;
+  width: 60%;
   left:50%;
   transform: translate(-50%, -50%);
   font-size: xx-large;
@@ -348,3 +375,92 @@ abbr[title] {
   text-align: center;
   padding-top: 2%;
 }
+
+  
+.table-container {
+  border-spacing: 20px;
+  position:absolute;
+  top:50%;
+  transform:translate(-50%, -50%);
+  left:50%;
+  text-align: center;
+  font-size: xx-large;
+  border-collapse: collapse;
+}
+
+.table-container tr {
+  background-color: #256b9a;
+}
+
+.table-container th, td {
+    padding: 1.5vw 1.5vw;
+}
+
+.table-container td:hover {
+  background-color: #2691d9;
+}
+
+.delete-button {
+  background-color: rgb(163, 13, 13);
+  align-items: center;
+  font-size: 25px;
+  width:80%;
+  border-radius: 8px;
+}
+
+.update-button {
+  width:80%;
+  text-align: center;
+  background-color: rgb(21, 131, 74);
+  font-size: 25px;
+  border-radius: 8px;
+}
+
+.table-container tbody tr:last-of-type {
+  border-bottom: 2px solid #004798;
+}
+
+.update-student-form {
+  background-color: white;
+  width: 30%;
+  height: 60%;
+  left: 50%;
+  top: 50%;
+
+  transform:translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+
+.update-student-form h1 {
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+  font-size: 40px;
+}
+
+.update-student-form form {
+  padding: 0 40px;
+  box-sizing: border-box;
+
+}
+
+.update-student-form form .txt_field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+
+
+
+
+
+
+
+
+
+
+  
