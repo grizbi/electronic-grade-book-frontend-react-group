@@ -61,7 +61,7 @@ const UpdateStudent = () => {
                         <label>Marks</label>
                     </div>
                     <input position type="submit" value="Update"></input>
-                    <div>{isUserUpdated && <p style={{color:"green", fontSize:"30px", fontWeight:"bold"}}>Student data updated successfully</p>}</div>
+                    <div>{isUserUpdated && <p style={{color:"green", fontSize:"20px", fontWeight:"bold"}}>Student data updated successfully</p>}</div>
                 </form> 
             </div>
         </div>

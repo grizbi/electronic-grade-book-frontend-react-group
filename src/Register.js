@@ -27,6 +27,7 @@ const handleSubmit = (e) => {
                 setIsCreated(false);
             }
             else {
+                setIsUserAlreadyDefined(false);
                 setIsCreated(true);
             }
         })
@@ -72,7 +73,7 @@ const handleSubmit = (e) => {
                     <input position type="submit" value="Submit"></input>
                     <p>Already have an account? <Link to="/login"> Log in </Link> </p>  
                     <div className="error">{isUserAlreadyDefined && <p>User already defined, try different e-mail</p>}</div>
-                    <div>{isCreated && <p>Account created successfully</p>}</div>
+                    <div>{isCreated && <p style={{color:"Green"}}>Account created successfully</p>}</div>
                 </form>
                 
             </div>

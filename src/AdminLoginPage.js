@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import MySideNav from "./SideNav";
-import MyCalendar from "./Calendar";
-
 
 const AdminHomePage = () => {
 
@@ -78,7 +76,6 @@ const AdminHomePage = () => {
     return ( 
         <div className="admin-home-page">
             <h1 style={{textAlign:"center", fontSize:"50px"}}>Hello {localStorage.getItem('email')}</h1>
-            {/* <h2 style={{paddingTop:"1vw",textAlign:"center", fontSize:"30px"}}>Student Management Control Panel</h2> */}
             <MySideNav/>
             <div className="statistics">
                 <div className="students-quantity">
@@ -108,8 +105,6 @@ const AdminHomePage = () => {
                     <i class="fa-solid fa-pen"></i>
                 </div>
             </div>
-            
-            {/* <div className="statistics-info"></div> */}
             <div className="fun-fact">
                     <h3>Interesting facts about students and marks</h3>
                     Student with the highest average grade: {highestAverageGradeStudent}<br></br>
@@ -117,10 +112,6 @@ const AdminHomePage = () => {
                     Most often obtained mark: {mostOftenObtainedMark} <br></br>
                     Least frequently obtained mark: {leastFrequentlyObtainedMark}   
             </div>       
-            
-            {/* <div className="calendar">
-                <MyCalendar/>  
-            </div>  */}
         </div>
 
      );

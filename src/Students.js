@@ -42,7 +42,7 @@ const Students = () => {
                 <h1 style={{textAlign:"center", fontSize:"2.5vw"}}>List of all students</h1>
                 <div className="table-container">
                     <table>
-                        <tr style={{backgroundColor:"DarkSlateGray"}}>
+                        <tr style={{backgroundColor:"#ffafcc"}}>
                             <th>Email</th>
                             <th>Name</th>
                             <th>Surname</th>
