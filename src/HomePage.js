@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import AdminHomePage from "./AdminLoginPage";
+import { isSessionActive, redirectUserIfSessionNotEstablished } from "./SessionUtil";
 
 const Homepage = () => {
+    useEffect(( )=> {
+        redirectUserIfSessionNotEstablished();
+    })
+
     const user = localStorage.getItem('email');
-    console.log(user);
     if(user === 'admin') {
         return ( 
             <div>
@@ -10,7 +15,7 @@ const Homepage = () => {
             </div>
          );
     }
-    else {
+    else if(isSessionActive()) {
         return ( 
             <div>
                 hello user

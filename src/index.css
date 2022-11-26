@@ -268,8 +268,8 @@ input[type="submit"]:hover{
   top: 60%;
   line-height: 2;
   width: 60%;
-  height: 17vw;
-  font-size: 1.2vw;
+  height: 19vw;
+  font-size: 1.3vw;
   background-color: #cdb4db;
   border-radius: 10px;
   text-align: center;
@@ -380,6 +380,17 @@ h3{
   position: relative;
   border-bottom: 2px solid #adadad;
   margin: 30px 0;
+}
+
+.logout {
+  position: absolute;
+  top: 65vh;
+}
+
+@media only screen and (max-height: 722px) {
+  .logout {
+    top: 55vh;
+  }
 }
 
 

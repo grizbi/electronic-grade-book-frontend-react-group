@@ -22,12 +22,6 @@ const MySideNav = () => {
                 </NavIcon>
                 <NavText>Students</NavText>
             </NavItem>
-            <NavItem eventKey="marks">
-                <NavIcon>
-                    <i class="fas fa-highlighter"></i>
-                </NavIcon>
-                <NavText>Marks</NavText>
-            </NavItem>
             <NavItem eventKey="grade">
                 <NavIcon>
                     <i className="fa-solid fa-calculator" style={{fontSize: 20}}/>
@@ -39,6 +33,12 @@ const MySideNav = () => {
                     <i className="fa-solid fa-chart-simple" style={{fontSize: 20}}/>
                 </NavIcon>
                 <NavText>Charts</NavText>
+            </NavItem>
+            <NavItem className="logout" eventKey="">
+                <NavIcon>
+                    <i className="fas fa-sign-out-alt" style={{fontSize: 20}}/>
+                </NavIcon>
+                <NavText>Logout</NavText>
             </NavItem>
         </SideNav.Nav>
     </SideNav>

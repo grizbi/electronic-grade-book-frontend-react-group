@@ -19,7 +19,6 @@ const UpdateStudent = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(user)
         }).then((response) => {
-            console.log(response);
             setIsUserUpdated(true);
         })}
     return ( 

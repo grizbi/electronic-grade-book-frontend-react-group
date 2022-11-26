@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link} from 'react-router-dom';
 
 const Login = () => {
@@ -7,8 +7,10 @@ const [areBadCredentials, setAreBadCredentials] = useState(false);
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 let jwt = "";
-// const navigate = useNavigate();
 
+useEffect( () => {
+    localStorage.clear();
+})
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +31,6 @@ const handleSubmit = (e) => {
     })
     .then(data => {
         jwt = data.jwt;
-        console.log(jwt);
         localStorage.setItem('jwt', jwt);
         localStorage.setItem('email', email);
         window.location.replace("/homepage");
