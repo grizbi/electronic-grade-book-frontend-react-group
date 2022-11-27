@@ -16,7 +16,10 @@ const UpdateStudent = () => {
     
         fetch('http://localhost:8080/users/' + user.id, {
             method: 'PUT',
-            headers: { "Content-Type": "application/json" },
+            headers: { 
+                "Content-Type": "application/json", 
+                'Authorization': 'Bearer ' + localStorage.getItem('jwt')
+            },
             body: JSON.stringify(user)
         }).then((response) => {
             setIsUserUpdated(true);
