@@ -9,7 +9,7 @@ const MySideNav = () => {
     }} className='mysidenav'
     >
         <SideNav.Toggle />
-        <SideNav.Nav defaultSelected="homepage">
+        <SideNav.Nav>
             <NavItem eventKey="homepage">
                 <NavIcon>
                     <i className="fa fa-fw fa-home" style={{fontSize: 20}}/>

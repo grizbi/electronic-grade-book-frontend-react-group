@@ -75,7 +75,7 @@ const AdminHomePage = () => {
 
     return ( 
         <div className="admin-home-page">
-            <h1 style={{textAlign:"center", fontSize:"50px"}}>Hello {localStorage.getItem('email')}</h1>
+            <h1 style={{textAlign:"center", fontSize:"5.5vh"}}>Hello {localStorage.getItem('email')}</h1>
             <MySideNav/>
             <div className="statistics">
                 <div className="students-quantity">
@@ -107,10 +107,10 @@ const AdminHomePage = () => {
             </div>
             <div className="fun-fact">
                     <h3>Interesting facts about students and marks</h3>
-                    Student with the highest average grade: {highestAverageGradeStudent}<br></br>
-                    Student with the lowest average grade: {lowestAverageGradeStudent} <br></br>
-                    Most often obtained mark: {mostOftenObtainedMark} <br></br>
-                    Least frequently obtained mark: {leastFrequentlyObtainedMark}   
+                    Student with the highest average grade: <b>{highestAverageGradeStudent}</b><br></br>
+                    Student with the lowest average grade: <b>{lowestAverageGradeStudent}</b> <br></br>
+                    Most often obtained mark: <b>{mostOftenObtainedMark}</b> <br></br>
+                    Least frequently obtained mark: <b>{leastFrequentlyObtainedMark} </b>  
             </div>       
         </div>
 

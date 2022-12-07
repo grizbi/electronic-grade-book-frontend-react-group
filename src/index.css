@@ -194,22 +194,24 @@ input[type="submit"]:hover{
 
 .statistics {
   display:flex;
-  left:10%;
-  width: 80vw;
+  left:15%;
+  width: 70vw;
   position: absolute;
-  top: 15vh;
+  top: 18vh;
   font-size: x-large;
   opacity: 0.7;
+  gap: 2vw;
 }
 
 .statistics-two {
   display:flex;
-  left:10%;
-  width: 80vw;
+  left:15%;
+  width: 70vw;
   position: absolute;
-  top: 37vh;
+  top: 38vh;
   font-size: x-large;
   opacity: 0.7;
+  gap: 2vw;
 }
 
 .students-quantity {
@@ -274,6 +276,8 @@ input[type="submit"]:hover{
   border-radius: 10px;
   text-align: center;
 }
+
+
 
 h3{
   border-bottom: #ffafcc solid 2px;
