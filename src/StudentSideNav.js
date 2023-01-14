@@ -7,13 +7,13 @@ import SideNav, {
   
   import "@trendmicro/react-sidenav/dist/react-sidenav.css";
   
-  const MySideNav = () => {
+  const StudentSideNav = () => {
     return (
       <SideNav
         onSelect={(selected) => {
           window.location.replace("/" + selected);
         }}
-        className="mysidenav"
+        className="student_sidenav"
       >
         <SideNav.Toggle />
         <SideNav.Nav defaultSelected="homepage">
@@ -23,37 +23,37 @@ import SideNav, {
             </NavIcon>
             <NavText>Home</NavText>
           </NavItem>
-          <NavItem eventKey="students">
+          <NavItem eventKey="studentslist">
             <NavIcon>
               <i class="fas fa-user-graduate"></i>
             </NavIcon>
-            <NavText>Students</NavText>
+            <NavText>Students List</NavText>
           </NavItem>
-          <NavItem eventKey="predictedgrades">
-            <NavIcon>
-              <i class="fas fa-medal" style={{ fontSize: 20 }} />
-            </NavIcon>
-            <NavText>Predicted grades</NavText>
-          </NavItem>
-          <NavItem eventKey="charts">
+          <NavItem eventKey="studentcharts">
             <NavIcon>
               <i className="fa-solid fa-chart-simple" style={{ fontSize: 20 }} />
             </NavIcon>
             <NavText>Charts</NavText>
           </NavItem>
-          <NavItem eventKey="news">
+          <NavItem eventKey="studentnews">
             <NavIcon>
               <i className="fa-solid fa-envelope" style={{ fontSize: 20 }} />
             </NavIcon>
             <NavText>News</NavText>
           </NavItem>
-          <NavItem eventKey="calculator">
+          <NavItem eventKey="messages">
+            <NavIcon>
+              <i className="fa-solid fa-comments" style={{ fontSize: 20 }} />
+            </NavIcon>
+            <NavText>Messages</NavText>
+          </NavItem>
+          <NavItem eventKey="calculatorstudent">
             <NavIcon>
               <i class="fa-solid fa-calculator" style={{ fontSize: 20 }} />
             </NavIcon>
             <NavText>Calculator</NavText>
           </NavItem>
-          <NavItem className="logout" eventKey="">
+          <NavItem className="logout-student" eventKey="">
             <NavIcon>
               <i className="fas fa-sign-out-alt" style={{ fontSize: 20 }} />
             </NavIcon>
@@ -64,5 +64,5 @@ import SideNav, {
     );
   };
   
-  export default MySideNav;
+  export default StudentSideNav;
   

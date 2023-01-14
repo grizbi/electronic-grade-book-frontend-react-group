@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import AdminHomePage from "./AdminLoginPage";
+import StudentLoginPage from "./StudentLoginPage";
+
 import { isSessionActive, redirectUserIfSessionNotEstablished } from "./SessionUtil";
+
 
 const Homepage = () => {
     useEffect(( )=> {
@@ -18,7 +21,7 @@ const Homepage = () => {
     else if(isSessionActive()) {
         return ( 
             <div>
-                hello user
+                <StudentLoginPage/>
             </div>
          );
     }
